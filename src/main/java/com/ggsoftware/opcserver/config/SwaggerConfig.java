@@ -27,7 +27,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
 				.paths(PathSelectors.regex("/.*"))
 				.build()
 				.directModelSubstitute(Pageable.class, PageableConfigSwagger.class)
-				.tags(new Tag("OpcItensTags", "Gerencia consulta aos dados dos dispositivos"))
+				.tags(new Tag("OpcItensTags", "Gerencia a consulta aos dados dos dispositivos"))
 				.apiInfo(apiInfoMetaData());
 	}
 	
