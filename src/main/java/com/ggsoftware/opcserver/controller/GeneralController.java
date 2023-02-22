@@ -15,6 +15,11 @@ import com.ggsoftware.opcserver.entity.General;
 import com.ggsoftware.opcserver.entity.GeneralDTO;
 import com.ggsoftware.opcserver.services.GeneralService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
+@Api(tags = "OpcItensTags")
 @RestController
 @RequestMapping("/opcdevices")
 public class GeneralController {
@@ -23,22 +28,26 @@ public class GeneralController {
 	@Autowired
 	private GeneralService service;
 	
+	//Seção de endpoints:
+	@ApiOperation("Lista todas as opcItensTags" )
 	@GetMapping()
 	public List<GeneralDTO> ListarTodasAsTags(){
 		return toCollectonDTO(service.findAll());
 	}
 	
-	//Seção de endpoints:
+	@ApiOperation("Lista por nome opcItensTags - páginas" )
 	@GetMapping("/listar-por-nome")
 	public List<GeneralDTO> ListarTagsPorNome(@RequestParam("name") String name, Pageable pageable) {
 		return toCollectonDTO(service.findByName(name, pageable));
 	}
 	
+	@ApiOperation("Lista todas as opcItensTags - páginas" )
 	@GetMapping("/listar-todos")
-	public List<GeneralDTO> ListarTodasTagsPaginada(Pageable pageable) {
+	public List<GeneralDTO> ListarTodasTagsPaginada(@ApiParam(name = "Size", value = "Quantidade por páginas" ) Pageable pageable) {
 		return toCollectonDTOPage(service.findAll(pageable));
 	}
 	
+	@ApiOperation("Lista opcItensTags por nome e período" )
 	@GetMapping("/listar-por-periodo")
 	public List<General> ListarTagsPorPeriodoENome(@RequestParam String name, @RequestParam String dateInicio, @RequestParam String dateFinal )   {
 		return service.listarPorPeriodoName(name, dateInicio, dateFinal);
