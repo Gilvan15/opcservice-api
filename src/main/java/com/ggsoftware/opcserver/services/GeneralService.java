@@ -40,6 +40,18 @@ public class GeneralService {
 			return repository.consultarPorPeriodoName(name, sDateInicio, sDateFinal);
 	}
 	
+	
+	public List<General> listarPorPeriodoNamePage(String name, String dateInicio,  String dateFinal, Pageable pageable ){
+		
+		String sDateInicio = dateInicio.replace("-","/");
+		String sDateFinal  = dateFinal.replace("-","/");
+		System.out.println("sDateInicio: " + sDateInicio);
+		System.out.println("sDateInicio: " + sDateFinal);
+		
+		return repository.consultarPorPeriodoNamePage(name, sDateInicio, sDateFinal, pageable);
+}
+	
+	
 	public List<General> listarPorPeriodo(String dateInicio,  String dateFinal ) {
 		
 		String sDateInicio = dateInicio.replace("-","/");

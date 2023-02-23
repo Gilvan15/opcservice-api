@@ -36,13 +36,13 @@ public class GeneralController {
 	}
 	
 	@ApiOperation("Lista por nome opcItensTags - páginas" )
-	@GetMapping("/listar-por-nome")
+	@GetMapping("/listar-por-nome-pagina")
 	public List<GeneralDTO> ListarTagsPorNome(@RequestParam("name") String name, Pageable pageable) {
 		return toCollectonDTO(service.findByName(name, pageable));
 	}
 	
 	@ApiOperation("Lista todas as opcItensTags - páginas" )
-	@GetMapping("/listar-todos")
+	@GetMapping("/listar-todos-pagina")
 	public List<GeneralDTO> ListarTodasTagsPaginada(@ApiParam(name = "Size", value = "Quantidade por páginas" ) Pageable pageable) {
 		return toCollectonDTOPage(service.findAll(pageable));
 	}
@@ -52,6 +52,14 @@ public class GeneralController {
 	public List<General> ListarTagsPorPeriodoENome(@RequestParam String name, @RequestParam String dateInicio, @RequestParam String dateFinal )   {
 		return service.listarPorPeriodoName(name, dateInicio, dateFinal);
 	}
+	
+	@ApiOperation("Lista opcItensTags por nome e período - páginas" )
+	@GetMapping("/listar-por-periodo-pagina")
+	public List<General> ListarTagsPorPeriodoENomePage(@RequestParam String name, @RequestParam String dateInicio, @RequestParam String dateFinal, Pageable pageable )   {
+		return service.listarPorPeriodoNamePage(name, dateInicio, dateFinal, pageable);
+	}
+	
+	
 	
 	//Seção de métodos privados:
 	private List<GeneralDTO> toCollectonDTO(List<General> list ){

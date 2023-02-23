@@ -13,7 +13,7 @@ import com.ggsoftware.opcserver.entity.General;
 public interface GeneralRepository extends JpaRepository<General, Integer> {
 	
 	@Query("from General where name like %:name%")
-	List<General> consultarPorNome(String name, Pageable pageable );
+	List<General> consultarPorNome(String name, Pageable pageable);
 	
 	@Query("from General where date between convert(NVARCHAR(10), :dataInicial, 103) and convert(NVARCHAR(10), :dataFinal, 103)")
 	List<General> consultarPorPeriodo(String dataInicial, String dataFinal);
@@ -21,4 +21,6 @@ public interface GeneralRepository extends JpaRepository<General, Integer> {
 	@Query("from General where name like %:name% and date between convert(NVARCHAR(10), :dataInicial, 103) and convert(NVARCHAR(10), :dataFinal, 103)")
 	List<General> consultarPorPeriodoName(String name, String dataInicial, String dataFinal);
 
+	@Query("from General where name like %:name% and date between convert(NVARCHAR(10), :dataInicial, 103) and convert(NVARCHAR(10), :dataFinal, 103)")
+	List<General> consultarPorPeriodoNamePage(String name, String dataInicial, String dataFinal, Pageable pageable);
 }
