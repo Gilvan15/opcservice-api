@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ggsoftware.opcserver.entity.ItensTag;
+import com.ggsoftware.opcserver.entity.ItemTag;
 import com.ggsoftware.opcserver.entity.Settings;
 import com.ggsoftware.opcserver.repositories.SettingsRepository;
 
@@ -21,9 +21,9 @@ public class SettingsServer {
 		return repository.findAll();
 	}
 	
-	public List<ItensTag> findAllTags() {
+	public List<ItemTag> findAllTags() {
 		
-		List<ItensTag> itensTag = new ArrayList<ItensTag>();
+		List<ItemTag> itensTag = new ArrayList<ItemTag>();
 		List<Settings> nome = repository.findAll();
 
 		for (int i = 0; i < nome.size(); i++) {
@@ -32,7 +32,7 @@ public class SettingsServer {
 				String[] values1 = text1.split(",");
 				//System.out.println("O valor de values1 ".concat("é: " + values1.length));
 				for (int y = 0; y < values1.length; y++) {
-					itensTag.add(new ItensTag(y + 1, values1[y]));
+					itensTag.add(new ItemTag(y + 1, values1[y]));
 				}
 			}
 		}

@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "79240fa7-bc6a-4356-b033-4ea80d9030fb",
+		"name": "OPCServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1758315"
+	},
+	"item": [
+		{
+			"name": "Settings Tags",
+			"item": [
+				{
+					"name": "Listar  Settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/opcdevices/por-nome",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"opcdevices",
+								"por-nome"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Settings ItensTags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/opcdevices/por-nome",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"opcdevices",
+								"por-nome"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "General opcTags",
+			"item": [
+				{
+					"name": "Lista todas opcItemTags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/opcdevices/por-nome",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"opcdevices",
+								"por-nome"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista opcItemTags por nome e período",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/opcdevices/por-nome",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"opcdevices",
+								"por-nome"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista opcItemTags por nome e período-page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/opcdevices/por-nome",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"opcdevices",
+								"por-nome"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista todas opcItemTags-page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/opcdevices/por-nome",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"opcdevices",
+								"por-nome"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista opcItemTags por nome-page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/opcdevices/por-nome",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"opcdevices",
+								"por-nome"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

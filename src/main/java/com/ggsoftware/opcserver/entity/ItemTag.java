@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class ItensTag {
+public class ItemTag {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

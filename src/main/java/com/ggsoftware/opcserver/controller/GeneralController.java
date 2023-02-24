@@ -19,7 +19,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
-@Api(tags = "OpcItensTags")
+@Api(tags = "OpcItemTags")
 @RestController
 @RequestMapping("/opcdevices")
 public class GeneralController {
@@ -29,32 +29,32 @@ public class GeneralController {
 	private GeneralService service;
 	
 	//Seção de endpoints:
-	@ApiOperation("Lista todas as opcItensTags" )
+	@ApiOperation("Lista todas opcItemTags")
 	@GetMapping()
 	public List<GeneralDTO> ListarTodasAsTags(){
 		return toCollectonDTO(service.findAll());
 	}
 	
-	@ApiOperation("Lista por nome opcItensTags - páginas" )
-	@GetMapping("/listar-por-nome-pagina")
+	@ApiOperation("Lista opcItemTags por nome - page" )
+	@GetMapping("/listar-por-nome-page")
 	public List<GeneralDTO> ListarTagsPorNome(@RequestParam("name") String name, Pageable pageable) {
 		return toCollectonDTO(service.findByName(name, pageable));
 	}
 	
-	@ApiOperation("Lista todas as opcItensTags - páginas" )
-	@GetMapping("/listar-todos-pagina")
+	@ApiOperation("Lista todas opcItemTags - page" )
+	@GetMapping("/listar-todos-page")
 	public List<GeneralDTO> ListarTodasTagsPaginada(@ApiParam(name = "Size", value = "Quantidade por páginas" ) Pageable pageable) {
 		return toCollectonDTOPage(service.findAll(pageable));
 	}
 	
-	@ApiOperation("Lista opcItensTags por nome e período" )
-	@GetMapping("/listar-por-periodo")
+	@ApiOperation("Lista opcItemTags por nome e período" )
+	@GetMapping("/listar-por-nome-periodo")
 	public List<General> ListarTagsPorPeriodoENome(@RequestParam String name, @RequestParam String dateInicio, @RequestParam String dateFinal )   {
 		return service.listarPorPeriodoName(name, dateInicio, dateFinal);
 	}
 	
-	@ApiOperation("Lista opcItensTags por nome e período - páginas" )
-	@GetMapping("/listar-por-periodo-pagina")
+	@ApiOperation("Lista opcItemTags por nome e período - page" )
+	@GetMapping("/listar-por-nome-periodo-page")
 	public List<General> ListarTagsPorPeriodoENomePage(@RequestParam String name, @RequestParam String dateInicio, @RequestParam String dateFinal, Pageable pageable )   {
 		return service.listarPorPeriodoNamePage(name, dateInicio, dateFinal, pageable);
 	}
